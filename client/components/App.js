@@ -14,9 +14,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // addReview: false,
       allReviews: '',
-      // overview: null,
       submitted: null,
     };
     this.getData = this.getData.bind(this);
@@ -27,8 +25,13 @@ class App extends React.Component {
     this.getData();
   }
 
+  // getData() {
+  //   axios.get('http://18.224.139.39:3000/reviews')
+  //     .then((result) => this.setState({ allReviews: result }))
+  //     .catch((err) => console.log(err, 'error'));
+  // }
   getData() {
-    axios.get('http://18.224.139.39:3000/reviews')
+    axios.get('http://localhost:3000/reviews')
       .then((result) => this.setState({ allReviews: result }))
       .catch((err) => console.log(err, 'error'));
   }
@@ -38,7 +41,7 @@ class App extends React.Component {
     // WILL NEED TO ADD CURRENT PRODUCT ID NUMBER TO REQUEST!!
     // CURRENTLY HARDCODED INTO FORM.JS
 
-    axios.post('http://18.224.139.39:3000/review', { input })
+    axios.post('http://localhost:3000/review', { input })
       .then(() => {
         this.getData();
       })
@@ -84,7 +87,6 @@ class App extends React.Component {
 
   render() {
     const { allReviews } = this.state;
-    // const { overview } = this.state;
     const { submitted } = this.state;
     return (
       <Container>
@@ -92,10 +94,6 @@ class App extends React.Component {
           backgroundColor: '#F7F7F7',
         }}
         />
-        {/* <Row>
-          { overview
-            ? <Overview reviews={allReviews} /> : ''}
-        </Row> */}
         {submitted
           ? '' : this.revealFormButton()}
         {allReviews === ''

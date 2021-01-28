@@ -9,8 +9,6 @@ const randNum = function (max) {
   return Math.floor(Math.random() * Math.floor(max));
 };
 
-// Will need to update product name/id with actual name and id from group project.
-
 const quantity = 5;
 const reviews = [];
 
