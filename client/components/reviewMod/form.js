@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable no-underscore-dangle */
@@ -78,19 +79,18 @@ const ReviewForm = (props) => (
     initialValues={{
       product_id: '',
       product_name: '',
-      username: '',
-      title: '',
-      review: '',
-      rating: '',
-      buy_again: '',
-      would_recommend_to_friend: '',
-      play_experience: '',
-      difficulty_level: '',
-      value_for_money: '',
-      unhelpful_count: 0,
-      helpful_count: 0,
+      // username: '',
+      // title: '',
+      // review: '',
+      // rating: '',
+      // buy_again: 'true',
+      // would_recommend_to_friend: 'true',
+      // play_experience: '',
+      // difficulty_level: '',
+      // value_for_money: '',
     }}
     onSubmit={(values, { setSubmitting }) => {
+      console.log(values);
       console.log(values);
       // props.fn(values);
       // props.toggle();
@@ -100,24 +100,24 @@ const ReviewForm = (props) => (
         .required('Required!'),
       product_name: Yup.string()
         .required('Required!'),
-      username: Yup.string()
-        .required('Required!'),
-      title: Yup.string()
-        .required('Required!'),
-      review: Yup.string()
-        .required('Required!'),
-      rating: Yup.number()
-        .required('Required!'),
-      buy_again: Yup.boolean()
-        .required('Required!'),
-      would_recommend_to_friend: Yup.boolean()
-        .required('Required!'),
-      play_experience: Yup.number()
-        .required('Required!'),
-      difficulty_level: Yup.number()
-        .required('Required!'),
-      value_for_money: Yup.number()
-        .required('Required!'),
+      // username: Yup.string()
+      //   .required('Required!'),
+      // title: Yup.string()
+      //   .required('Required!'),
+      // review: Yup.string()
+      //   .required('Required!'),
+      // rating: Yup.number()
+      //   .required('Required!'),
+      // buy_again: Yup.string()
+      //   .required('Required!'),
+      // would_recommend_to_friend: Yup.string()
+      //   .required('Required!'),
+      // play_experience: Yup.number()
+      //   .required('Required!'),
+      // difficulty_level: Yup.number()
+      //   .required('Required!'),
+      // value_for_money: Yup.number()
+      //   .required('Required!'),
     })}
   >
 
@@ -141,6 +141,7 @@ const ReviewForm = (props) => (
                     <Form.Group as={Col} controlId="formBasicName">
                       <Form.Label>User Name</Form.Label>
                       <Form.Control
+                        required
                         type="text"
                         placeholder="Enter Username"
                         onChange={handleChange}
@@ -155,6 +156,7 @@ const ReviewForm = (props) => (
                     <Form.Group as={Col} size="sm" controlId="formBasicEmail">
                       <Form.Label>Review Title</Form.Label>
                       <Form.Control
+                        required
                         type="text"
                         placeholder="Review Title"
                         onChange={handleChange}
@@ -166,7 +168,7 @@ const ReviewForm = (props) => (
                       )}
                     </Form.Group>
                   </Form.Row>
-
+{/*
                   <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label>1 -5, how did we do?</Form.Label>
                     <Form.Control
@@ -291,12 +293,12 @@ const ReviewForm = (props) => (
                         <div className="input-feedback">{errors.value_for_money}</div>
                       )}
                     </Form.Group>
-                  </Form.Row>
+                  </Form.Row> */}
 
                   <Button
                     disabled={isSubmitting}
-                    onClick={handleSubmit}
                     className="btn"
+                    onClick={handleSubmit}
                   >
                     Submit!
                   </Button>
