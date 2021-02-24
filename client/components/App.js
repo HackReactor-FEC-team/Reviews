@@ -5,7 +5,7 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 import axios from 'axios';
-import { Container, Button, Accordion, Card, Row } from 'react-bootstrap';
+import { Container, Button, Accordion, Card } from 'react-bootstrap';
 import Review from './reviewMod/review';
 import ReviewForm from './reviewMod/form';
 import './style.css';
@@ -28,13 +28,13 @@ class App extends React.Component {
 
   //  18.191.88.165
   getData() {
-    axios.get('http://18.191.88.165:3000/reviews')
+    axios.get('http://localhost:3000/reviews')
       .then((result) => this.setState({ allReviews: result.data }))
       .catch((err) => console.log(err, 'error'));
   }
 
   submitReview(input) {
-    axios.post('http://18.191.88.165:3000/review', { input })
+    axios.post('http://localhost:3000/review', { input })
       .then(() => {
         this.getData();
       })

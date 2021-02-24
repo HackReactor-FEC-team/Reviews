@@ -9,9 +9,8 @@ const randNum = function (max) {
   return Math.floor(Math.random() * Math.floor(max));
 };
 
-// Will need to update product name/id with actual name and id from group project.
-
-const quantity = 1000;
+// Adjust quantity to desired number of reviews. run file in terminal to seed database.
+const quantity = 100;
 const reviews = [];
 
 const seedReviews = () => {
@@ -20,7 +19,7 @@ const seedReviews = () => {
       reviews.push(
         new Review({
           product_id: randNum(5),
-          product_name: 'Prego Ducati',
+          product_name: 'Lego Ducati',
           username: faker.internet.userName(),
           title: faker.random.word(),
           review: faker.lorem.paragraph(),

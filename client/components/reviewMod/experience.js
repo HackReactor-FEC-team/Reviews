@@ -12,7 +12,7 @@ const Experience = (review) => (
     <div><Rating rating={review.review.difficulty_level} /></div>
 
     <div>Value for Money</div>
-    <div><Rating rating={review.review.value_for_money_} /></div>
+    <div><Rating rating={review.review.value_for_money} /></div>
 
   </div>
 );
